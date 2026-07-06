@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 4 | The Love Never Named</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff5f7;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3b5c;
+      box-shadow: 0 0 12px rgba(255, 107, 129, 0.5);
+      transform: scale(1.05);
+    }
+
+    .continue {
+      display: inline-block;
+      padding: 12px 25px;
+      background: transparent;
+      color: #ff3b5c;
+      text-decoration: none;
+      border: 2px solid #ff3b5c;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .continue:hover {
+      background: #ff3b5c;
+      color: white;
+      box-shadow: 0 0 12px rgba(255, 59, 92, 0.5);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Chapter 4</h1>
+    <h3>That One Message</h3>
+
+    <div class="quote-box">
+      "Sometimes a single message can stay longer than an entire day."
+    </div>
+
+    <p>
+Some days are so busy that they leave no room for conversations, only thoughts.
+
+That morning, I rushed out of the house with barely enough time to catch my train. Between getting ready, packing my bag, and trying not to be late for work, I forgot to text him like I usually did.
+
+The day only got busier…. Meetings…Calls… A never ending list of tasks.
+And to top it all off, there was an office party in the evening.
+
+Meanwhile…
+
+Miles away, he went about his day too.
+
+He noticed there wasn't the usual "Good morning."
+No random complaint about the train.
+No photo of a cloudy sky.
+Nothing.
+
+He thought about texting first.
+More than once.
+But he waited.
+
+Hours passed.
+
+Then finally…
+
+His screen lit up.
+
+"It's raining... Feels like the perfect time for pazham pori, coffee... and you."
+
+He smiled.
+
+"Me?"
+
+"Yeah. The combo is incomplete without my best friend. 😉"
+
+Best friend.
+That word stayed with him.
+
+Later…
+
+I called him.
+
+For the next hour, I complained about everything.
+
+He just listened.
+
+And somehow, that was enough.
+
+By the end of the call, nothing had changed in my life.
+But something in me felt lighter.
+
+Across the city, he set his phone down too.
+
+Neither of them knew what this was becoming.
+Only that talking to each other made everything feel better.
+
+That night, he asked his mother,
+"Amma… can you make pazham pori tomorrow?"
+
+Not because he craved it.
+
+But because a message had stayed longer than the rain.
+    </p>
+
+    <div class="nav">
+      <a href="chapter3.html" class="btn">← Chapter 3</a>
+      <a href="chapter5.html" class="continue">Continue the journey →</a>
+    </div>
+
+  </div>
+
+<div class="comment-section">
+  <h2>💬 Comments</h2>
+
+  <textarea id="commentInput" placeholder="Write your thoughts..."></textarea>
+  <button onclick="addComment()">Post</button>
+
+  <div id="commentList"></div>
+</div>
+
+</body>
+<script>
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  let list = document.getElementById("commentList");
+  list.innerHTML = "";
+
+  comments.forEach(c => {
+    let div = document.createElement("div");
+    div.className = "comment";
+    div.innerText = c;
+    list.appendChild(div);
+  });
+}
+
+function addComment() {
+  let input = document.getElementById("commentInput");
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  if (input.value.trim() !== "") {
+    comments.push(input.value);
+    localStorage.setItem("comments", JSON.stringify(comments));
+    input.value = "";
+    loadComments();
+  }
+}
+
+loadComments();
+</script>
+</html>

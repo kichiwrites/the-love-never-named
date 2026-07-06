@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 5 | The Love Never Named</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff5f7;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3b5c;
+      box-shadow: 0 0 12px rgba(255, 107, 129, 0.5);
+      transform: scale(1.05);
+    }
+
+    .continue {
+      display: inline-block;
+      padding: 12px 25px;
+      background: transparent;
+      color: #ff3b5c;
+      text-decoration: none;
+      border: 2px solid #ff3b5c;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .continue:hover {
+      background: #ff3b5c;
+      color: white;
+      box-shadow: 0 0 12px rgba(255, 59, 92, 0.5);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Chapter 5</h1>
+    <h3>Just Because</h3>
+
+    <div class="quote-box">
+      "Some love doesn’t announce itself. It just quietly shows up."
+    </div>
+
+    <p>
+The next morning felt like any other.
+
+The alarm rang too early.
+The train was crowded.
+Work started before coffee.
+
+Around noon, my phone lit up.
+
+Him: Lunch?  
+Me: Trying to. My boss has other plans.  
+Him: Good luck then. Don’t forget to eat.
+
+By evening, we met at the station as usual.
+
+"You look tired," he said.  
+"I am."  
+"You'll survive."  
+"I hope so."
+
+We laughed.
+
+Then he handed me a small paper bag.
+
+"For you."
+
+Inside were warm pazham pori.
+
+"You actually got this?"
+
+"My mom made them."
+
+"You asked her?"
+
+"You said it yesterday."
+
+A smile came before I could stop it.
+
+"You remembered?"
+
+"You say a lot of things. I remember some of them."
+
+It wasn’t a big gift.
+
+But it felt like one.
+
+The walk continued like always.
+
+Work. Train. Random thoughts.
+
+Nothing special.
+
+But somehow everything felt softer.
+
+At the station, we parted ways.
+
+"See you tomorrow?" he asked.
+
+"If my boss allows it," I laughed.
+
+"I'll pray for you."
+
+"You better."
+
+And we walked away.
+
+Different directions.
+
+Same thought lingering in both minds.
+
+Sometimes affection doesn’t need a reason.
+
+It just shows up.
+
+Just because.
+    </p>
+
+    <div class="nav">
+      <a href="chapter4.html" class="btn">← Chapter 4</a>
+      <a href="chapter6.html" class="continue">Continue the journey →</a>
+    </div>
+
+  </div>
+<div class="comment-section">
+  <h2>💬 Comments</h2>
+
+  <textarea id="commentInput" placeholder="Write your thoughts..."></textarea>
+  <button onclick="addComment()">Post</button>
+
+  <div id="commentList"></div>
+</div>
+
+</body>
+<script>
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  let list = document.getElementById("commentList");
+  list.innerHTML = "";
+
+  comments.forEach(c => {
+    let div = document.createElement("div");
+    div.className = "comment";
+    div.innerText = c;
+    list.appendChild(div);
+  });
+}
+
+function addComment() {
+  let input = document.getElementById("commentInput");
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  if (input.value.trim() !== "") {
+    comments.push(input.value);
+    localStorage.setItem("comments", JSON.stringify(comments));
+    input.value = "";
+    loadComments();
+  }
+}
+
+loadComments();
+</script>
+</html>

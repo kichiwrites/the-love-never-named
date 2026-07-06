@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 3 | The Love Never Named</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff5f7;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3b5c;
+      box-shadow: 0 0 12px rgba(255, 107, 129, 0.5);
+      transform: scale(1.05);
+    }
+
+    .continue {
+      display: inline-block;
+      padding: 12px 25px;
+      background: transparent;
+      color: #ff3b5c;
+      text-decoration: none;
+      border: 2px solid #ff3b5c;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .continue:hover {
+      background: #ff3b5c;
+      color: white;
+      box-shadow: 0 0 12px rgba(255, 59, 92, 0.5);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Chapter 3</h1>
+    <h3>The Ride Through the Rain</h3>
+
+    <div class="quote-box">
+      "Some people don’t arrive loudly. They simply show up when you need them most."
+    </div>
+
+    <p>
+Some people don’t show up with big dramatic gestures.
+Sometimes, they just appear when you’re standing there alone in the rain.
+It had been one of those completely draining workdays.
+
+By the time I left the office, the sky had already burst open. Rain was coming down hard, hitting the pavement so loudly that even the traffic sounded quieter. To make it worse, I’d lost my umbrella on the train that morning.
+
+So, I was standing just inside the office entrance, staring out at the rain and hoping it would ease up.
+
+Five minutes turned into ten,
+Ten turned into twenty,
+Then almost half an hour.
+
+My phone buzzed.
+"Where are you?"
+"Still at work," I replied. "Waiting for the rain to slow down."
+
+No reply.
+
+A few minutes later, my phone rang.
+
+It was him.
+
+"I'm outside. Come, I'll drop you home."
+
+For a second, I forgot all about the rain.
+"Wait... what?" I laughed nervously.
+"I can't. It's raining too hard. I'll get drenched."
+
+"I know," he said.
+"I brought an extra raincoat."
+
+Silence.
+
+"You... what?"
+
+"I had one with me. Just come."
+
+A few minutes later, I walked over to him.
+He handed me the spare raincoat like it was the most normal thing in the world.
+
+No teasing.
+No drama.
+
+Just a simple, "Wear this."
+
+The ride started with rain tapping against our raincoats and cool wind rushing past us.
+
+For a while, neither of us said anything.
+
+Then, out of nowhere, he asked,
+"So... how was work today?"
+
+And that was it. I started talking.
+
+About my day.
+About everything.
+
+He just listened.
+
+Every now and then, he’d nod or laugh softly, like he actually cared about every small detail.
+
+By the time we reached my house, the rain had almost stopped.
+
+He parked the bike and got down.
+
+"Wait," he said.
+
+He reached into his bag and pulled out three Kinder Joy eggs.
+
+"The ones you wanted."
+
+I blinked at him.
+
+"You didn’t have to do this," I said.
+
+"I know."
+
+That was all he said.
+
+No big deal.
+
+Just a smile.
+
+Then he left.
+
+I stood there for a moment, watching his bike disappear.
+
+Maybe it was the rain.
+Maybe it was the ride.
+
+Or maybe...
+
+Some people just make ordinary days unforgettable.
+    </p>
+
+    <div class="nav">
+      <a href="chapter2.html" class="btn">← Chapter 2</a>
+      <a href="#" class="continue">Continue the journey →</a>
+    </div>
+
+  </div>
+<div class="comment-section">
+  <h2>💬 Comments</h2>
+
+  <textarea id="commentInput" placeholder="Write your thoughts..."></textarea>
+  <button onclick="addComment()">Post</button>
+
+  <div id="commentList"></div>
+</div>
+
+</body>
+<script>
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  let list = document.getElementById("commentList");
+  list.innerHTML = "";
+
+  comments.forEach(c => {
+    let div = document.createElement("div");
+    div.className = "comment";
+    div.innerText = c;
+    list.appendChild(div);
+  });
+}
+
+function addComment() {
+  let input = document.getElementById("commentInput");
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  if (input.value.trim() !== "") {
+    comments.push(input.value);
+    localStorage.setItem("comments", JSON.stringify(comments));
+    input.value = "";
+    loadComments();
+  }
+}
+
+loadComments();
+</script>
+</html>

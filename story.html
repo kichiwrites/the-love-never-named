@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 1 | The Love Never Named</title>
+
+  <style>
+    body 
+       {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff5f7;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3b5c;
+      box-shadow: 0 0 12px rgba(255, 107, 129, 0.5);
+      transform: scale(1.05);
+    }
+
+    .continue {
+      display: inline-block;
+      padding: 12px 25px;
+      background: transparent;
+      color: #ff3b5c;
+      text-decoration: none;
+      border: 2px solid #ff3b5c;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .continue:hover {
+      background: #ff3b5c;
+      color: white;
+      box-shadow: 0 0 12px rgba(255, 59, 92, 0.5);
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Chapter 1</h1>
+    <h3>The Beginning</h3>
+
+    <div class="quote-box">
+      "Maybe some stories don’t begin with I love you. They begin with silence that already understands everything."
+    </div>
+
+    <p>
+Maybe my favourite kind of love isn't the one that begins with a confession. Maybe it's the one that quietly exists between two people who simply know.
+I imagine him all the time a little chubby, tall enough to make me look up whenever he smiles. One day, just like any other day, we met. He was wearing a maroon shirt, and somehow, I had chosen a maroon kurti without even planning it. He looked at the sky and said, "The weather is too beautiful. Let's go for a ride."
+
+A ride I had secretly wished for, for the longest time.
+He's the biggest cutie. I argue with him over the smallest things, yet he never loses his temper. He just listens patiently, smiles, and teases me back. Not once has he raised his voice at me, and somehow that gentleness says more than words ever could.
+
+He's also the first guy who never lets me spend my own money. Every time we're together, he quietly takes care of everything without making it feel like a favour.
+And then there was the day he made tea for me.
+He did.
+I still can't believe it. And honestly? It was one of the best cups of tea I've ever had.
+
+I remember the first rain of the season. I was at his place that day, and we got completely soaked. He simply handed me one of his oversized Tshirts and a pair of shorts so I wouldn't stay in wet clothes. We sat on the balcony with steaming cups of tea, listening to the rain in comfortable silence, talking about everything and nothing at all. Later that night, he dropped me home safely.
+
+But what stayed with me the most wasn't the tea, or the rain, or even the ride.
+It was the way he treated me.
+
+Not once did he make me uncomfortable. Not once did he touch me in a way that felt wrong or look at me with anything but respect. In a world where that sometimes feels rare, his kindness felt incredibly safe. He's shy, adorably shy!! and maybe that's one of the things I like most about him.
+
+We're not in a relationship.
+Not yet.
+He knows I like him.
+I know he likes me.
+
+Neither of us has ever said it out loud, and strangely... we don't need to. We spend almost all our time together, laughing, arguing, sharing tea, watching the rain, going on random rides, and creating memories that feel like home.
+
+For now, that's enough.
+Maybe some stories don't begin with "I love you."
+
+Maybe they begin with matching shades of Maroon, a rainy evening, a cup of tea, and two hearts that already know.
+    </p>
+
+    <div class="nav">
+      <a href="index.html" class="btn">← Back to Cover</a>
+     <a href="chapter2.html" class="continue">Continue the journey →</a>
+    </div>
+
+  </div>
+
+</body>
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+
+.progress-bar {
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(to right, #ff6b81, #ff3b5c);
+  transition: width 0.1s ease;
+
+<div class="comment-section">
+  <h2>💬 Comments</h2>
+
+  <textarea id="commentInput" placeholder="Write your thoughts..."></textarea>
+  <button onclick="addComment()">Post</button>
+
+  <div id="commentList"></div>
+</div>
+</body>
+<script>
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  let list = document.getElementById("commentList");
+  list.innerHTML = "";
+
+  comments.forEach(c => {
+    let div = document.createElement("div");
+    div.className = "comment";
+    div.innerText = c;
+    list.appendChild(div);
+  });
+}
+
+function addComment() {
+  let input = document.getElementById("commentInput");
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  if (input.value.trim() !== "") {
+    comments.push(input.value);
+    localStorage.setItem("comments", JSON.stringify(comments));
+    input.value = "";
+    loadComments();
+  }
+}
+
+loadComments();
+</script>
+
+</html>

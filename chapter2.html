@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 2 | The Love Never Named</title>
+
+  <style>
+    body 
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>{
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff5f7;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3b5c;
+      box-shadow: 0 0 12px rgba(255, 107, 129, 0.5);
+      transform: scale(1.05);
+    }
+
+    .continue {
+      display: inline-block;
+      padding: 12px 25px;
+      background: transparent;
+      color: #ff3b5c;
+      text-decoration: none;
+      border: 2px solid #ff3b5c;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .continue:hover {
+      background: #ff3b5c;
+      color: white;
+      box-shadow: 0 0 12px rgba(255, 59, 92, 0.5);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Chapter 2</h1>
+    <h3>The Little Things</h3>
+
+    <div class="quote-box">
+      "Sometimes love doesn’t arrive loudly. It walks in quietly, beside you."
+    </div>
+
+    <p>
+Some stories don’t move forward with grand confessions.
+They move with the smallest moments.
+
+After that rainy evening, life quietly returned to normal. We still met the same way we always did, but something had shifted. Not in our words, but in the comfort of simply being around each other.
+
+Whenever he saw me from a distance, there was always that familiar smile. Not too wide, not too obvious.... just enough to make me wonder if he smiled like that at everyone. He had this adorable habit of pretending not to notice me first. He would look somewhere else for a second, then turn back with a grin as if seeing me had suddenly made the day a little better.
+
+“What?” I’d ask.
+“Nothing,” he’d reply, trying to hide his smile.
+But somehow, it never really felt like “nothing.”
+
+One Sunday after church, everyone decided to walk to a nearby restaurant for dinner. The youth group filled the road with laughter, conversations, and endless teasing. Somehow, without planning it, we ended up walking beside each other.
+
+Neither of us was trying to make it happen.
+It just... happened.
+The walk wasn’t long, but no one seemed to mind taking their time.
+
+He asked about my week, listened without interrupting, and laughed at the little stories I told. I noticed he was surprisingly easy to talk to. There were no awkward pauses, no pressure to keep the conversation going.
+
+Just comfort.
+
+Halfway through the walk, he noticed I was adjusting the strap of my bag.
+“Give it to me.”
+I replied, “I’ve got it.”
+“I know,” he said with a small smile. “Just offering.”
+I laughed and shook my head.
+“I’ll survive.”
+“Fair enough.”
+
+That was it.
+No dramatic moment.
+No insistence.
+
+Just a simple exchange that somehow stayed with me longer than it should have.
+
+As we reached the restaurant, everyone rushed inside to find seats while we followed behind at our own pace.
+
+He glanced at me for a brief moment.
+“Maroon suits you.”
+I looked at him, surprised.
+“Thanks.”
+A second later I smiled.
+“It suits you too.”
+
+He let out a quiet laugh, scratched the back of his neck, and held the restaurant door open as everyone else disappeared inside.
+Nothing remarkable had happened that evening.
+
+At least that’s what anyone watching would have thought.
+But sometimes, the beginning of a story isn’t marked by fireworks.
+
+Sometimes it’s just two people discovering that they don’t mind walking a little slower when the other is beside them.
+    </p>
+
+    <div class="nav">
+      <a href="story.html" class="btn">← Chapter 1</a>
+      <a href="chapter3.html" class="continue">Continue the journey →</a>
+    </div>
+
+  </div>
+
+</body>
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+
+.progress-bar {
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(to right, #ff6b81, #ff3b5c);
+  transition: width 0.1s ease;
+}
+
+<div class="comment-section">
+  <h2>💬 Comments</h2>
+
+  <textarea id="commentInput" placeholder="Write your thoughts..."></textarea>
+  <button onclick="addComment()">Post</button>
+
+  <div id="commentList"></div>
+</div>
+</body>
+<script>
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  let list = document.getElementById("commentList");
+  list.innerHTML = "";
+
+  comments.forEach(c => {
+    let div = document.createElement("div");
+    div.className = "comment";
+    div.innerText = c;
+    list.appendChild(div);
+  });
+}
+
+function addComment() {
+  let input = document.getElementById("commentInput");
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  if (input.value.trim() !== "") {
+    comments.push(input.value);
+    localStorage.setItem("comments", JSON.stringify(comments));
+    input.value = "";
+    loadComments();
+  }
+}
+
+loadComments();
+</script>
+</html>

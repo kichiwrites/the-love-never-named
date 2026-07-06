@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 6 | The Love Never Named</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fff5f7;
+      color: #333;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      text-align: center;
+      font-weight: normal;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3b5c;
+      box-shadow: 0 0 12px rgba(255, 107, 129, 0.5);
+      transform: scale(1.05);
+    }
+
+    .continue {
+      display: inline-block;
+      padding: 12px 25px;
+      background: transparent;
+      color: #ff3b5c;
+      text-decoration: none;
+      border: 2px solid #ff3b5c;
+      border-radius: 25px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .continue:hover {
+      background: #ff3b5c;
+      color: white;
+      box-shadow: 0 0 12px rgba(255, 59, 92, 0.5);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Chapter 6</h1>
+    <h3>A Little Too Early</h3>
+
+    <div class="quote-box">
+      "Sometimes love is not spoken. It is delivered."
+    </div>
+
+    <p>
+By 11 a.m., Grace had already argued with the printer, snapped at her colleague for borrowing a pen, and nearly cried because someone finished the last cup of coffee.
+
+"Grace, are you okay?" her colleague asked cautiously.
+"I'm fine."
+
+She wasn't.
+
+Everything felt irritating. Even silence felt loud.
+
+When Noel texted, "Had lunch?"
+She replied, "Can you stop asking me the same questions every single day?"
+
+She regretted it immediately.
+
+But not enough to fix it.
+
+On the other side of the city, Noel read it quietly.
+
+He didn’t reply.
+
+He just waited.
+
+Later, Grace called him crying.
+
+"My day was horrible..."
+
+He listened.
+
+Then he got up, took his bike keys, and left.
+
+He bought chocolates, chips, juices, and everything she liked.
+
+He packed them in a bag and left it outside her door.
+
+While still on the call, he said,
+"Open your door."
+
+She did.
+
+The bag was there.
+
+And so was he, walking away in the rain.
+
+She ran after him.
+
+"I'm sorry..."
+
+"It's okay," he said.
+
+"I love you so much... you're my best friend."
+
+He smiled.
+
+Because that was enough for him.
+
+She went back inside.
+
+Later, he texted her a banana emoji 🍌
+
+"The universal solution."
+
+"Pazham pori."
+
+She laughed.
+
+A simple joke.
+
+A shared language.
+
+A deal was made that night.
+
+No explanations.
+
+Just 🍌.
+
+And somewhere between chaos and comfort…
+
+They started becoming home for each other.
+    </p>
+
+    <div class="nav">
+      <a href="chapter5.html" class="btn">← Chapter 5</a>
+      <a href="chapter7.html" class="continue">Continue the journey →</a>
+    </div>
+
+  </div>
+
+<div class="comment-section">
+  <h2>💬 Comments</h2>
+
+  <textarea id="commentInput" placeholder="Write your thoughts..."></textarea>
+  <button onclick="addComment()">Post</button>
+
+  <div id="commentList"></div>
+</div>
+
+</body>
+<script>
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  let list = document.getElementById("commentList");
+  list.innerHTML = "";
+
+  comments.forEach(c => {
+    let div = document.createElement("div");
+    div.className = "comment";
+    div.innerText = c;
+    list.appendChild(div);
+  });
+}
+
+function addComment() {
+  let input = document.getElementById("commentInput");
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+  if (input.value.trim() !== "") {
+    comments.push(input.value);
+    localStorage.setItem("comments", JSON.stringify(comments));
+    input.value = "";
+    loadComments();
+  }
+}
+
+loadComments();
+</script>
+</html>
