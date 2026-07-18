@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://kichiwrites.github.io/the-love-never-named/sitemap.xml
